@@ -10,5 +10,3 @@ export function findUserById(id) {
 export function listUsers() {
   return users;
 }
-
-export { users };

@@ -52,13 +52,15 @@ Orders:
 
 ## Instructor notes
 
-The app runs correctly. The review target is the boundary between the two modules.
+The app runs correctly. The review target is the boundary between the two modules. This copy already has the improvement applied.
 
-`src/modules/users/users.js` exports `findUserById`, but nothing calls it. It also exports the raw `users` array. `src/modules/orders/orders.js` imports that array and searches it with `.find`.
+In the starting version, `src/modules/users/users.js` exported `findUserById`, but nothing called it. It also exported the raw `users` array. `src/modules/orders/orders.js` imported that array and searched it with `.find`.
 
-Ask students what they would change. The improvement is:
+The improvement, now in the code:
 
-- orders should call `findUserById(order.userId)`
-- the `users` array should stay inside the users module and should not be exported
+- orders calls `findUserById(order.userId)`
+- the `users` array stays inside the users module and is not exported
 
-Orders then depend on a function, not on how the users list is stored. Do not add Express, a database, or another package. This exercise is only about that module boundary.
+Orders now depend on a function, not on how the users list is stored. The output of `npm start` is the same as before.
+
+Do not add Express, a database, or another package. This exercise is only about that module boundary.

@@ -1,4 +1,4 @@
-import { users } from "../users/users.js";
+import { findUserById } from "../users/users.js";
 
 const orders = [
   { id: 101, userId: 1, item: "Notebook" },
@@ -7,7 +7,7 @@ const orders = [
 
 export function listOrders() {
   return orders.map((order) => {
-    const user = users.find((item) => item.id === order.userId);
+    const user = findUserById(order.userId);
 
     return {
       id: order.id,
